@@ -11,5 +11,9 @@ func main() {
 		log.SetFlags(0)
 		log.Fatalln("Usage: cmd \"string to be printed\"")
 	}
-	fmt.Println(os.Args[1])
+	fmt.Println(Foo())
+}
+
+func Foo() string {
+	return "I'll print anything I want anyway"
 }
