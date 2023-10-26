@@ -7,15 +7,18 @@ import (
 )
 
 func main() {
-	m := messages{
-		error: "Usage: cmd \"string to be printed\"",
-		message: "I'll print anything i want anyway",
-	}
+	error := "Usage: cmd \"string to be printed\""
+	message := "I'll print anything i want anyway"
+	m := NewMessages(error, message)
+
 	if len(os.Args) != 2 {
 		log.SetFlags(0)
 		log.Fatalln(m.error)
 	}
+
 	fmt.Println(Foo(m.message))
+	m.Bar()
+	fmt.Println(m.message)
 }
 
 func Foo(s string) string {
