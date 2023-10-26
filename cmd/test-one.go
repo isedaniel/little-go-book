@@ -8,7 +8,8 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		log.Fatal("Usage: cmd \"string to be printed\"")
+		log.SetFlags(0)
+		log.Fatalln("Usage: cmd \"string to be printed\"")
 	}
 	fmt.Println(os.Args[1])
 }
