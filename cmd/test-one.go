@@ -19,6 +19,14 @@ func main() {
 	fmt.Println(Foo(m.message))
 	m.Bar()
 	fmt.Println(m.message)
+
+	newerr := newerror{
+		m: m,
+		error: "this is new error!",
+	}
+	newerr.Baz()
+	fmt.Println(newerr.error)
+	fmt.Println(m.message)
 }
 
 func Foo(s string) string {
