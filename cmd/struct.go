@@ -17,7 +17,7 @@ func (m *messages) Bar() {
 }
 
 type newerror struct {
-	m *messages
+	m     *messages
 	error string
 }
 
