@@ -1,35 +1,24 @@
 package main
 
 import (
+	"fmt"
+	"math/rand"
+	"sort"
+)
+
 // "fmt"
 // "log"
 // "os"
-)
 
 func main() {
-	// error := "Usage: cmd \"string to be printed\""
-	// message := "I'll print anything i want anyway"
-	// m := NewMessages(error, message)
-	//
-	// if len(os.Args) != 2 {
-	// 	log.SetFlags(0)
-	// 	log.Fatalln(m.error)
-	// }
-	//
-	// fmt.Println(Foo(m.message))
-	// m.Bar()
-	// fmt.Println(m.message)
-	//
-	// newerr := newerror{
-	// 	m: m,
-	// 	error: "this is new error!",
-	// }
-	// newerr.Baz()
-	// fmt.Println(newerr.error)
-	// fmt.Println(m.message)
-	arrayCap()
-}
+	scores := make([]int, 10)
+	for i := 0; i < 10; i++ {
+		scores[i] = int(rand.Intn(100))
+	}
+	sort.Ints(scores)
 
-func Foo(s string) string {
-	return s + " (this passed trough Foo function)"
+	worst := make([]int, 5)
+	copy(worst[2:], scores[:1])
+	fmt.Println(worst)
+	fmt.Println(scores)
 }

@@ -1,27 +1,21 @@
 package main
 
-func NewMessages(error, message string) *messages {
-	return &messages{
-		error:   error,
-		message: message,
+type Account struct {
+	name    string
+	balance int
+}
+
+func (a *Account) SetName(name string) {
+	a.name = name
+}
+
+func (a *Account) SetBalance(amount int) {
+	a.balance = amount
+}
+
+func NewAccount() *Account {
+	return &Account{
+		name:    "",
+		balance: 0,
 	}
-}
-
-type messages struct {
-	error   string
-	message string
-}
-
-func (m *messages) Bar() {
-	m.message += " (this passed through Bar)"
-}
-
-type newerror struct {
-	m     *messages
-	error string
-}
-
-func (n *newerror) Baz() {
-	n.m.Bar()
-	n.error = n.m.message
 }
